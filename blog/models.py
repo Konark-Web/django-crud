@@ -10,3 +10,6 @@ class Post(models.Model):
     created_date = models.DateTimeField(default=timezone.now, blank=True)
     author = models.ForeignKey(User, blank=False, on_delete=models.CASCADE)
     views = models.IntegerField(default=0)
+
+    class Meta:
+        ordering = ('-created_date',)
