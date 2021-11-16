@@ -8,6 +8,11 @@
 {% block content %}
     {% if page_object %}
         <div class="row mb-2">
+            {% if post_deleted %}
+                <div class="alert alert-success" role="alert">
+                    Post was deleted.
+                </div>
+            {% endif %}
             <h2>On this page you can see posts by {{ author.username }}</h2>
             {% for post in page_object %}
                 <div class="col-md-6">

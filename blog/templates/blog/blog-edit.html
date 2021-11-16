@@ -1,9 +1,15 @@
 {% extends 'base.html' %}
 
 {% block title %}
-    <title>{{ post.title }}</title>
+    <title>Edit {{ post.title }}</title>
 {% endblock %}
 
 {% block content %}
-
+    {% if form %}
+        <form method="POST" class="post-form edit-post-form">
+            {% csrf_token %}
+            {{ form }}
+             <button type="submit" class="btn btn-primary">Edit</button>
+        </form>
+    {% endif %}
 {% endblock %}

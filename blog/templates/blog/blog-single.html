@@ -18,9 +18,15 @@
         </div>
         {% if user.is_authenticated and user.id == post.author.id %}
             <div class="post_edit">
-                <a href="#" class="edit-link">Edit post</a>
-                <a href="#" class="remove-link">Deleted post</a>
+                <a href="{% url 'blog_edit' pk=post.pk %}" class="edit-link">Edit post</a>
+                <a href="{% url 'blog_delete' pk=post.pk %}" class="remove-link">Deleted post</a>
             </div>
+
+            {% if post_edited %}
+                <div class="alert alert-success" role="alert">
+                    Post was edited.
+                </div>
+            {% endif %}
         {% endif %}
     </div>
 {% endblock %}
