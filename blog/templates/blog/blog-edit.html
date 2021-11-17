@@ -5,8 +5,9 @@
 {% endblock %}
 
 {% block content %}
+    <a href="{% url 'blog_single' pk=post.pk %}"><- Return to post</a>
     {% if form %}
-        <form method="POST" class="post-form edit-post-form">
+        <form method="POST" class="form post-form edit-post-form">
             {% csrf_token %}
             {{ form }}
              <button type="submit" class="btn btn-primary">Edit</button>

@@ -11,6 +11,23 @@
     font-style: italic;
 }
 
+.post_views {
+    margin-top: 10px;
+}
+
+.post_edit {
+    margin-top: 20px;
+}
+
+.form {
+    margin: 20px 0;
+}
+
+.post-form input,
+.post-form textarea {
+    margin-bottom: 15px;
+}
+
 .blog-footer {
     padding: 2.5rem 0;
     color: #727272;

@@ -16,10 +16,13 @@
         <div class="post_content">
             {{ post.text }}
         </div>
+        <div class="post_views">
+            <i>Views: {{ post.views }}</i>
+        </div>
         {% if user.is_authenticated and user.id == post.author.id %}
             <div class="post_edit">
-                <a href="{% url 'blog_edit' pk=post.pk %}" class="edit-link">Edit post</a>
-                <a href="{% url 'blog_delete' pk=post.pk %}" class="remove-link">Deleted post</a>
+                <a href="{% url 'blog_edit' pk=post.pk %}" class="btn btn-primary edit-link">Edit post</a>
+                <a href="{% url 'blog_delete' pk=post.pk %}" class="btn btn-danger remove-link">Deleted post</a>
             </div>
 
             {% if post_edited %}

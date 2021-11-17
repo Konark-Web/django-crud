@@ -14,6 +14,15 @@
                 </div>
             {% endif %}
             <h2>On this page you can see posts by {{ author.username }}</h2>
+        </div>
+
+        <div class="row mb-2">
+            <div class="col-md-3">
+                <a href="{% url 'blog_new' %}" class="btn btn-primary">Create new post</a>
+            </div>
+        </div>
+
+        <div class="row mb-2">
             {% for post in page_object %}
                 <div class="col-md-6">
                     <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
