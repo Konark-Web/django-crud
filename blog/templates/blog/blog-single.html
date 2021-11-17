@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block content %}
-    <div class="post_main">
+    <div class="post-main">
         <h1>{{ post.title|title }}</h1>
         <div class="post_meta">
             <span>Posted on {{ post.created_date|date:"F d, Y" }} by
@@ -13,20 +13,20 @@
                    class="author-link">{{ post.author.username }}</a>
             </span>
         </div>
-        <div class="post_content">
+        <div class="post-content">
             {{ post.text }}
         </div>
-        <div class="post_views">
+        <div class="post-views">
             <i>Views: {{ post.views }}</i>
         </div>
         {% if user.is_authenticated and user.id == post.author.id %}
-            <div class="post_edit">
+            <div class="post-edit">
                 <a href="{% url 'blog_edit' pk=post.pk %}" class="btn btn-primary edit-link">Edit post</a>
                 <a href="{% url 'blog_delete' pk=post.pk %}" class="btn btn-danger remove-link">Deleted post</a>
             </div>
 
             {% if post_edited %}
-                <div class="alert alert-success" role="alert">
+                <div class="alert alert-success post-was-edited" role="alert">
                     Post was edited.
                 </div>
             {% endif %}
